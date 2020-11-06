@@ -1,15 +1,15 @@
+import Navigation from "components/Navigation"
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
+import styles from "./index.module.scss"
+
 export default function Layout({ children }) {
   return (
-    <div className="layout">
-      {children}
+    <div className={styles.layout}>
+      <Navigation />
 
-      <style jsx>{`
-        .layout {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 20px;
-        }
-      `}</style>
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <AnimateSharedLayout>{children}</AnimateSharedLayout>
+      </AnimatePresence>
     </div>
   )
 }

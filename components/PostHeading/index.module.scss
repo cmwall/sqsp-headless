@@ -1,0 +1,35 @@
+.postHeading {
+  position: relative;
+
+  @media (min-width: 1020px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media (min-width: 1020px) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.content {
+  @media (min-width: 1020px) {
+    position: absolute;
+    color: white;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+
+    @media (min-width: 1020px) {
+      font-size: 50px;
+    }
+  }
+}

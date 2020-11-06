@@ -9,4 +9,5 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+  color: rgba(0, 0, 0, 0.8);
 }
