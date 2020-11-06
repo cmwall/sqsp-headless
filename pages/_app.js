@@ -1,9 +1,14 @@
 import "styles/reset.css"
-import "styles/clarkson.scss"
-import "styles/defaults.scss"
+import "styles/clarkson.css"
+import "styles/defaults.css"
+import Layout from "components/Layout"
 
 function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default App
