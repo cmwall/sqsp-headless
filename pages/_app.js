@@ -1,7 +1,9 @@
-import '../styles/globals.css'
+import "styles/reset.css"
+import "styles/clarkson.scss"
+import "styles/defaults.scss"
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default App
