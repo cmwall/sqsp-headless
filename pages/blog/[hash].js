@@ -1,3 +1,4 @@
+import Head from "components/Head"
 import PageContainer from "components/PageContainer"
 import PostHeading from "components/PostHeading"
 import PostBody from "components/PostBody"
@@ -5,6 +6,7 @@ import PostBody from "components/PostBody"
 export default function BlogPost({ post }) {
   return (
     <PageContainer>
+      <Head title={`SQSP Headless — ${post.title}`} />
       <PostHeading post={post} />
       <PostBody body={post.body} />
     </PageContainer>
