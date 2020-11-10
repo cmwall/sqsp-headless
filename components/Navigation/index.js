@@ -4,12 +4,14 @@ import styles from "./index.module.scss"
 export default function Navigation() {
   return (
     <nav className={styles.navigation}>
-      <div>
-        <p>SQSP Headless</p>
-        <p>Everything you need to grow online.</p>
-      </div>
+      <Link href="/">
+        <a>
+          <p>SQSP Headless</p>
+          <p>Everything you need to grow online.</p>
+        </a>
+      </Link>
 
-      <div>
+      <div className={styles.linkContainer}>
         <Link href="/">
           <a>Home</a>
         </Link>

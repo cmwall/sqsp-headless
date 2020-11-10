@@ -1,10 +1,12 @@
 import PageContainer from "components/PageContainer"
 import PostHeading from "components/PostHeading"
+import PostBody from "components/PostBody"
 
 export default function BlogPost({ post }) {
   return (
     <PageContainer>
       <PostHeading post={post} />
+      <PostBody body={post.body} />
     </PageContainer>
   )
 }
