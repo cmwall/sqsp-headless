@@ -17,7 +17,7 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = `https://${process.env.SQSP_SITE_ID}.squarespace.com/blog?format=json`
   const posts = await fetch(url)
   const json = await posts.json()
@@ -26,5 +26,6 @@ export async function getServerSideProps() {
     props: {
       posts: json,
     },
+    revalidate: 1,
   }
 }
