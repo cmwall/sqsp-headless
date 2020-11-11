@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <Navigation />
 
       <AnimatePresence exitBeforeEnter initial={false}>
-        <AnimateSharedLayout>{children}</AnimateSharedLayout>
+        <AnimateSharedLayout type="crossfade">{children}</AnimateSharedLayout>
       </AnimatePresence>
     </div>
   )
