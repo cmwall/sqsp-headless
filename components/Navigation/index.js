@@ -3,7 +3,7 @@ import styles from "./index.module.scss"
 
 export default function Navigation() {
   return (
-    <nav className={styles.navigation}>
+    <header className={styles.header}>
       <Link href="/">
         <a>
           <p>SQSP Headless</p>
@@ -11,11 +11,11 @@ export default function Navigation() {
         </a>
       </Link>
 
-      <div className={styles.linkContainer}>
+      <nav className={styles.navigation}>
         <Link href="/">
           <a>Home</a>
         </Link>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
