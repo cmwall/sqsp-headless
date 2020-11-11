@@ -4,6 +4,15 @@ import PostHeading from "components/PostHeading"
 import PostBody from "components/PostBody"
 
 export default function BlogPost({ post }) {
+  if (router.isFallback) {
+    return (
+      <PageContainer>
+        <Head />
+        <p>Loading...</p>
+      </PageContainer>
+    )
+  }
+
   return (
     <PageContainer>
       <Head title={`SQSP Headless — ${post.title}`} />
@@ -39,6 +48,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
