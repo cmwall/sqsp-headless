@@ -2,8 +2,11 @@ import Head from "components/Head"
 import PageContainer from "components/PageContainer"
 import PostHeading from "components/PostHeading"
 import PostBody from "components/PostBody"
+import { useRouter } from "next/router"
 
 export default function BlogPost({ post }) {
+  const router = useRouter()
+
   if (router.isFallback) {
     return (
       <PageContainer>
