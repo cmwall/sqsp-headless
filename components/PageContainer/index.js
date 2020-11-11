@@ -23,13 +23,13 @@ const pageTransitionVariants = {
 
 export default function PageContainer({ children }) {
   return (
-    <motion.div
+    <motion.main
       variants={pageTransitionVariants}
       initial="pageInitial"
       animate="pageAnimate"
       exit="pageExit"
     >
       {children}
-    </motion.div>
+    </motion.main>
   )
 }
