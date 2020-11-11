@@ -6,10 +6,11 @@ export default function PostGridItem({ post }) {
   return (
     <div className={styles.postGridItem}>
       <Link href={post.fullUrl}>
-        <a>
+        <a ariaLabel={`Read more about ${post.title}`}>
           <motion.img
             src={post.assetUrl}
             layoutId={`post-image-container-${post.id}`}
+            alt={`Post detail image for ${post.title}.`}
           />
         </a>
       </Link>
