@@ -15,8 +15,8 @@ export default function BlogPost({ post }) {
 
 export async function getStaticProps({ params: { hash } }) {
   const url = `https://sqsp-headless.squarespace.com/blog/${hash}?format=json`
-  const post = await fetch(url)
-  const json = await post.json()
+  const response = await fetch(url)
+  const json = await response.json()
 
   return {
     props: {

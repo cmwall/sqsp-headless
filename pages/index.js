@@ -22,8 +22,8 @@ export default function Home({ posts }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
   const url = `https://sqsp-headless.squarespace.com/blog?format=json`
-  const posts = await fetch(url)
-  const json = await posts.json()
+  const response = await fetch(url)
+  const json = await response.json()
 
   return {
     props: {
