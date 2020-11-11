@@ -4,19 +4,21 @@ import styles from "./index.module.scss"
 
 export default function PostGridItem({ post }) {
   return (
-    <div className={styles.postGridItem}>
-      <Link href={post.fullUrl}>
+    <div>
+      <Link href={post.fullUrl} scroll={false}>
         <a aria-label={`Read more about ${post.title}`}>
-          <motion.img
-            src={post.assetUrl}
+          <motion.div
+            className={styles.imageContainer}
             layoutId={`post-image-container-${post.id}`}
-            alt={`Post detail image for ${post.title}.`}
+            style={{
+              backgroundImage: `url(${post.assetUrl})`,
+            }}
           />
         </a>
       </Link>
 
       <Link href={post.fullUrl}>
-        <a>{post.title}</a>
+        <a className={styles.postTitle}>{post.title}</a>
       </Link>
 
       <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
