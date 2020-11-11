@@ -17,8 +17,11 @@ export default function Home({ posts }) {
   )
 }
 
+// This function gets called at build time on server-side.
+// It may be called again, on a serverless function, if
+// revalidation is enabled and a new request comes in
 export async function getStaticProps() {
-  const url = `https://${process.env.SQSP_SITE_ID}.squarespace.com/blog?format=json`
+  const url = `https://sqsp-headless.squarespace.com/blog?format=json`
   const posts = await fetch(url)
   const json = await posts.json()
 
@@ -26,6 +29,9 @@ export async function getStaticProps() {
     props: {
       posts: json,
     },
-    revalidate: 1,
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every second
+    revalidate: 1, // In seconds
   }
 }

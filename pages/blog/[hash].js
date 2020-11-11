@@ -14,7 +14,7 @@ export default function BlogPost({ post }) {
 }
 
 export async function getStaticProps({ params: { hash } }) {
-  const url = `https://${process.env.SQSP_SITE_ID}.squarespace.com/blog/${hash}?format=json`
+  const url = `https://sqsp-headless.squarespace.com/blog/${hash}?format=json`
   const post = await fetch(url)
   const json = await post.json()
 
@@ -27,13 +27,13 @@ export async function getStaticProps({ params: { hash } }) {
 }
 
 export async function getStaticPaths() {
-  const url = `https://${process.env.SQSP_SITE_ID}.squarespace.com/blog?format=json`
+  const url = `https://sqsp-headless.squarespace.com/blog?format=json`
   const posts = await fetch(url)
   const json = await posts.json()
 
-  const paths = json.items.map(i => ({
+  const paths = json.items.map(post => ({
     params: {
-      hash: i.fullUrl.split("/blog/")[1],
+      hash: post.fullUrl.split("/blog/")[1],
     },
   }))
 
