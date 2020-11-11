@@ -28,8 +28,8 @@ export async function getStaticProps({ params: { hash } }) {
 
 export async function getStaticPaths() {
   const url = `https://sqsp-headless.squarespace.com/blog?format=json`
-  const posts = await fetch(url)
-  const json = await posts.json()
+  const response = await fetch(url)
+  const json = await response.json()
 
   const paths = json.items.map(post => ({
     params: {
